@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miko Tristan Abadia</title>
     <script>
-        // Check system's theme preference on page load
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        // // Check system's theme preference on page load
+        // const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
-        // Load user theme preference from localStorage (if set) or use system theme
+        // // Load user theme preference from localStorage (if set) or use system theme
+        // const savedTheme = localStorage.getItem('theme');
+        // const currentTheme = savedTheme ? savedTheme : systemTheme;
+
+        // // Set the theme based on the user's or system's preference
+        // document.documentElement.classList.toggle('dark', currentTheme === 'dark');
+        
+        // Load user theme preference from localStorage (if set), otherwise default to dark
         const savedTheme = localStorage.getItem('theme');
-        const currentTheme = savedTheme ? savedTheme : systemTheme;
+        const currentTheme = savedTheme ? savedTheme : 'dark';
 
-        // Set the theme based on the user's or system's preference
+        // Set the theme
         document.documentElement.classList.toggle('dark', currentTheme === 'dark');
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,10 +33,10 @@
                     <!-- Left side (logo/title) -->
                     <div class="items-center flex-shrink-0 mr-6 hidden md:flex">
                         <div class="group/all -ml-1 cursor-pointer">
-                            <p class="text-lg font-medium group-hover/all:text-neutral-500 transition-colors relative dark:group-hover/all:text-neutral-400">
+                            <a href="/" class="text-lg font-medium group-hover/all:text-neutral-500 transition-colors relative dark:group-hover/all:text-neutral-400">
                                 <span class="group relative">Miko</span>
                                 <span class="text-base font-normal text-neutral-500 group-hover/all:text-neutral-400 ml-2 transition-colors hidden xl:inline-block dark:group-hover/all:text-neutral-600">Developer</span>
-                            </p>
+                            </a>
                         </div>
                     </div>
     
@@ -44,27 +51,25 @@
     
                     <!-- Toggle Light / Dark Mode -->
                     <div class="w-full h-full hidden items-center justify-end lg:flex">
-                        <button class="font-medium flex items-center gap-2 group truncate" onclick="changeTheme()">
+                        <!-- <button class="font-medium flex items-center gap-2 group truncate" onclick="changeTheme()">
                         <span class="dark:hidden">
-                            <!-- Sun icon -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 18a6 6 0 100-12 6 6 0 000 12z"/>
                                 <path fill-rule="evenodd" d="M12 1.5a.75.75 0 01.75.75v1a.75.75 0 01-1.5 0v-1A.75.75 0 0112 1.5zm0 18a.75.75 0 01.75.75v1a.75.75 0 01-1.5 0v-1a.75.75 0 01.75-.75zM4.22 4.22a.75.75 0 011.06 0l.71.71a.75.75 0 11-1.06 1.06l-.71-.71a.75.75 0 010-1.06zm13.79.71a.75.75 0 011.06-1.06l.71.71a.75.75 0 01-1.06 1.06l-.71-.71zM2.25 12a.75.75 0 01.75-.75h1a.75.75 0 010 1.5h-1A.75.75 0 012.25 12zm16.5 0a.75.75 0 01.75-.75h1a.75.75 0 010 1.5h-1a.75.75 0 01-.75-.75zM4.22 19.78a.75.75 0 010-1.06l.71-.71a.75.75 0 111.06 1.06l-.71.71a.75.75 0 01-1.06 0zm14.56-1.06a.75.75 0 011.06 0l.71.71a.75.75 0 11-1.06 1.06l-.71-.71a.75.75 0 010-1.06z" clip-rule="evenodd"/>
                               </svg>                          
                         </span>
                         <span class="hidden dark:inline">
-                            <!-- Moon icon -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
                             </svg>
-                        </span>
+                        </span> -->
                     
                         <!-- Toggle switch -->
-                        <div class="bg-neutral-200 dark:bg-neutral-700 rounded-full h-5 w-10 relative transition-colors duration-200 group-hover:bg-neutral-300 dark:group-hover:bg-neutral-600">
+                        <!-- <div class="bg-neutral-200 dark:bg-neutral-700 rounded-full h-5 w-10 relative transition-colors duration-200 group-hover:bg-neutral-300 dark:group-hover:bg-neutral-600">
                             <div id="toggle-indicator" class="h-4 w-4 rounded-full bg-white dark:bg-neutral-900 absolute top-0.5 left-0.5 transition-transform duration-200 transform dark:translate-x-5"></div>
                         </div>
                         </button>
-                    </div>
+                    </div> -->
             </nav>
         </div>
     
@@ -110,7 +115,7 @@
                     <!-- <li><a class="text-neutral-400 transition-colors font-medium hover:text-neutral-600 dark:text-neutral-600 dark:hover:text-neutral-400" href="/imprint"> Imprint</a></li>
                     <li><a class="text-neutral-400 transition-colors font-medium hover:text-neutral-600 dark:text-neutral-600 dark:hover:text-neutral-400" href="/privacy-policy"> Privacy Policy</a></li> -->
                 </ul>
-                <p class="text-neutral-400 leading-none ml-1 dark:text-neutral-600">This portfolio website is heavily inspired by <a class="transition-colors font-medium hover:text-neutral-600 dark:hover:text-neutral-400" href="floriankiem.com">floriankiem.com</a></p>
+                <p class="text-neutral-400 leading-none ml-1 dark:text-neutral-600">This portfolio website is heavily inspired by <a class="transition-colors font-medium hover:text-neutral-600 dark:hover:text-neutral-400" href="https://floriankiem.com" target="_blank">floriankiem.com</a></p>
             </div>
         </footer>
     </div>
@@ -135,14 +140,14 @@
         }
 
         // Load user preference on page load
-        window.addEventListener('DOMContentLoaded', () => {
-            const theme = localStorage.getItem('theme');
-            if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        });
+        // window.addEventListener('DOMContentLoaded', () => {
+        //     const theme = localStorage.getItem('theme');
+        //     if (theme === 'dark') {
+        //         document.documentElement.classList.add('dark');
+        //     } else {
+        //         document.documentElement.classList.remove('dark');
+        //     }
+        // });
 
         window.addEventListener('load', () => {
             const currentPath = window.location.pathname;
